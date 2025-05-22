@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "category_places",
+  "info": {
+    "singularName": "category-place",
+    "pluralName": "category-places",
+    "displayName": "Lugar Categoria",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "place": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::place.place"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category-place.category-place"
+    },
+    "details": {
+      "type": "blocks",
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

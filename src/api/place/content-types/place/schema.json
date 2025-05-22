@@ -45,6 +45,15 @@
         "info": true
       },
       "customField": "plugin::strapi-location-picker.location-picker"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": false
     }
   }
 }

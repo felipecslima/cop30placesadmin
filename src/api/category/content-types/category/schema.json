@@ -48,6 +48,16 @@
           "localized": true
         }
       }
+    },
+    "city": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::city.city"
+    },
+    "categoryCityName": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
