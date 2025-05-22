@@ -1,6 +1,9 @@
 import { env } from '@strapi/utils';
 
 export default () => ({
+  'strapi-location-picker': {
+    enabled: true,
+  },
   upload: {
     config: {
       provider: 'cloudinary',
