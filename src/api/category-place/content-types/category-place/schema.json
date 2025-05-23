@@ -16,11 +16,6 @@
       "relation": "oneToOne",
       "target": "api::place.place"
     },
-    "category": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::category-place.category-place"
-    },
     "details": {
       "type": "blocks",
       "required": true
@@ -33,6 +28,11 @@
         "images",
         "files"
       ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }

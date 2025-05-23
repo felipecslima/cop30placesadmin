@@ -386,10 +386,7 @@ export interface ApiCategoryPlaceCategoryPlace
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::category-place.category-place'
-    >;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -421,6 +418,10 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   pluginOptions: {
+    'content-manager': {
+      displayedField: 'categoryCityName';
+      visible: true;
+    };
     i18n: {
       localized: true;
     };
@@ -428,8 +429,16 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   attributes: {
     categoryCityName: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+      Schema.Attribute.Unique &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     city: Schema.Attribute.Relation<'oneToOne', 'api::city.city'>;
+    color: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<'plugin::color-picker.color'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -455,7 +464,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       }> &
       Schema.Attribute.DefaultTo<'Nome'>;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'name'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID<'categoryCityName'> & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -4,6 +4,9 @@ export default () => ({
   'strapi-location-picker': {
     enabled: true,
   },
+  'color-picker': {
+    enabled: true,
+  },
   upload: {
     config: {
       provider: 'cloudinary',
