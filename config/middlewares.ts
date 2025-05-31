@@ -39,7 +39,7 @@ export default [
     name: 'strapi::cors',
     config: {
       enabled: true,
-      origin: ['http://localhost:3000', 'https://cop30placesadmin.onrender.com'],
+      origin: ['http://localhost:3200', 'https://cop30placesadmin.onrender.com'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
       credentials: true,

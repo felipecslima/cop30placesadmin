@@ -23,7 +23,8 @@
         "i18n": {
           "localized": false
         }
-      }
+      },
+      "unique": true
     },
     "slug": {
       "type": "uid",
@@ -47,13 +48,13 @@
       "customField": "plugin::strapi-location-picker.location-picker"
     },
     "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": false
+      ]
     }
   }
 }
