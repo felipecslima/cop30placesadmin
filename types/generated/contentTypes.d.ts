@@ -461,19 +461,11 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       displayedField: 'categoryCityName';
       visible: true;
     };
-    i18n: {
-      localized: true;
-    };
   };
   attributes: {
     categoryCityName: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.Unique &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+      Schema.Attribute.Unique;
     city: Schema.Attribute.Relation<'oneToOne', 'api::city.city'>;
     color: Schema.Attribute.String &
       Schema.Attribute.Required &
@@ -481,25 +473,16 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    details: Schema.Attribute.Blocks &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
+    details: Schema.Attribute.Blocks;
     image: Schema.Attribute.Media<'images' | 'files'>;
-    locale: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::category.category'
-    >;
+    > &
+      Schema.Attribute.Private;
     name: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }> &
       Schema.Attribute.DefaultTo<'Nome'>;
     publishedAt: Schema.Attribute.DateTime;
     slug: Schema.Attribute.UID<'categoryCityName'> & Schema.Attribute.Required;

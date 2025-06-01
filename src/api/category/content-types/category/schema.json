@@ -11,9 +11,6 @@
     "draftAndPublish": true
   },
   "pluginOptions": {
-    "i18n": {
-      "localized": true
-    },
     "content-manager": {
       "visible": true,
       "displayedField": "categoryCityName"
@@ -24,11 +21,7 @@
       "type": "string",
       "required": true,
       "unique": false,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "default": "Nome"
     },
     "slug": {
@@ -47,11 +40,7 @@
     },
     "details": {
       "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "city": {
       "type": "relation",
@@ -62,11 +51,7 @@
       "type": "string",
       "required": true,
       "unique": true,
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
+      "pluginOptions": {}
     },
     "color": {
       "type": "customField",
