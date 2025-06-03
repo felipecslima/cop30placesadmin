@@ -1,6 +1,13 @@
 import { env } from '@strapi/utils';
 
 export default () => ({
+  sentry: {
+    enabled: true,
+    config: {
+      dsn: env('SENTRY_DSN'),
+      sendMetadata: true,
+    },
+  },
   'strapi-location-picker': {
     enabled: true,
   },
